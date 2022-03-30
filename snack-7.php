@@ -43,19 +43,17 @@ unset($student);
   
   <dl>
     <?php 
-    foreach ($students as $student) {
+    foreach ($students as $student):
       extract($student);
-      $sum = 0;
-      foreach ($grades as $grade) {
-        $sum += $grade;
-      }
-      $avg = $sum / count($grades);
+      // foreach ($grades as $grade) {
+      //   $sum += $grade;
+      // }
+      $avg = array_sum($grades) / count($grades);
       ?>
       <dt><?php echo "$name $lastname" ?></dt>
       <dd><?php echo "La media dei voti è $avg" ?></dd>
       <?php
-      $sum = 0;
-    }
+    endforeach;
     ?>
   </dl>
 </body>

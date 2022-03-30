@@ -1,6 +1,8 @@
 <?php
 
 extract($_GET); // $name, $address, $age
+// oppure uno a uno e si usa il ternario
+// $name = (isset($_GET('name')) ? $_GET('name') : '');
 $flag = true;
 
 if (isset($name) && isset($address) && isset($age)) {
